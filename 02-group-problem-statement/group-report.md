@@ -13,6 +13,8 @@
 | 5 | Lê Trung Kiên | 2A202602748 | Researcher |
 | 6 | Nguyễn Trần Bảo Tâm | 2A202602408 | Writer |
 
+> Lưu ý quy mô: worksheet gợi ý nhóm 3–4 người, trong khi nhóm thực tế có 6 thành viên. Cần xác nhận quy mô này với giảng viên; báo cáo giữ đúng danh sách tham gia thực tế.
+
 **Candidate problem nhóm chọn:** Người dùng lưu quá nhiều nội dung để đọc sau nhưng khó xác định nội dung nào đáng ưu tiên, dẫn đến nhiều nội dung có giá trị bị bỏ quên và không được đọc lại.
 
 **Tên working concept:** RecallAI.
@@ -79,14 +81,14 @@ nhưng khi số lượng ngày càng nhiều, họ khó xác định nội dung 
 và thường quên quay lại đọc.
 ```
 
-**Vì sao chọn:** Save & Forget đạt tổng điểm cao nhất (34/35) và được sáu trong tám người phỏng vấn xác nhận có trải nghiệm tương tự. Workflow có actor, điểm nghẽn và output đo được, trong khi input URL công khai tương đối dễ dùng cho pilot. AI có vị trí can thiệp cụ thể ở bước tóm tắt, đánh giá relevance và ưu tiên; người dùng vẫn quyết định đọc. So với hai bài còn lại, RecallAI ít phụ thuộc vào quyền truy cập dữ liệu riêng tư và có thể chạy manual pilot trong lab trước khi xây integration.
+**Vì sao chọn:** Save & Forget đạt tổng điểm cao nhất (34/35). Theo tổng hợp của nhóm, sáu trong tám người được hỏi có trải nghiệm tương tự; tuy nhiên repo chưa có participant log và quote nguyên văn để đối chiếu kết quả này. Workflow có actor, điểm nghẽn và output đo được, trong khi input URL công khai tương đối dễ dùng cho pilot. AI có vị trí can thiệp cụ thể ở bước tóm tắt, đánh giá relevance và ưu tiên; người dùng vẫn quyết định đọc. So với hai bài còn lại, RecallAI ít phụ thuộc vào quyền truy cập dữ liệu riêng tư và có thể chạy manual pilot trước khi xây integration.
 
 **Vì sao không chọn candidate còn lại:**
 
 - Meeting notes cần thêm speech-to-text/transcript và đã có nhiều sản phẩm như Notion AI, Zoom AI Companion hoặc Microsoft Copilot; nhóm khó tạo khác biệt trong thời gian lab. Sai sót ở decision/action item cũng có hậu quả cao hơn và cần người chủ trì kiểm tra kỹ.
 - Multi-channel notification cần quyền truy cập email, Outlook, Messenger hoặc Zalo; data access và privacy làm pilot phức tạp. Nếu chỉ dùng keyword/rule thì AI fit không còn rõ, còn nếu tích hợp sâu thì vượt phạm vi lab.
 
-**Disagreement:** Một số thành viên lo bottleneck chưa đủ rõ và pain chưa đủ mạnh để tìm người validation. Sau khi phỏng vấn tám người, nhóm thấy 6/8 có thói quen lưu nhiều nhưng ít quay lại nên chốt candidate. Nhóm đồng thời thu hẹp problem về bước **đánh giá và ưu tiên sau khi save**, không tuyên bố giải toàn bộ nguyên nhân người dùng không đọc.
+**Disagreement:** Một số thành viên lo bottleneck chưa đủ rõ và pain chưa đủ mạnh để tìm người validation. Kết quả tổng hợp nhóm ghi nhận 6/8 người có thói quen lưu nhiều nhưng ít quay lại, nên nhóm chọn candidate để tiếp tục kiểm chứng. Vì bằng chứng từng người chưa được đưa vào repo, con số này là tín hiệu ban đầu chứ chưa phải kết luận chắc chắn. Nhóm đồng thời thu hẹp problem về bước **đánh giá và ưu tiên sau khi save**, không tuyên bố giải toàn bộ nguyên nhân người dùng không đọc.
 
 ---
 
@@ -96,9 +98,9 @@ và thường quên quay lại đọc.
 
 | Nguồn | Số người / mẫu | Tín hiệu xác nhận | Tín hiệu phản bác | Nhóm sửa problem thế nào |
 |---|---:|---|---|---|
-| Interview nhanh | 8 người: bạn cùng lớp/khóa VinAI và một số người ngoài lớp | 6/8 xác nhận có thói quen lưu nội dung để đọc sau nhưng ít quay lại. **Cần dán hai quote nguyên văn từ interview notes trước khi nộp.** | 2/8 (#4, #7) lưu ít hoặc nội dung có deadline bắt buộc nên không coi đây là pain | Thu hẹp actor về người lưu nhiều nội dung không bắt buộc; đặt pain ở bước ưu tiên nội dung đáng đọc trước, không phải thao tác save |
+| Interview nhanh | Theo tổng hợp nhóm: 8 người là bạn cùng lớp/khóa VinAI và một số người ngoài lớp | Nhóm ghi nhận 6/8 có thói quen lưu nội dung để đọc sau nhưng ít quay lại; participant log và quote nguyên văn chưa có trong repo. | Nhóm ghi nhận 2/8 (#4, #7) lưu ít hoặc nội dung có deadline bắt buộc nên không coi đây là pain; lý do chi tiết chưa có trong repo. | Tạm thu hẹp actor về người lưu nhiều nội dung không bắt buộc; tiếp tục kiểm chứng ở pilot trước khi khái quát. |
 
-**Insight sau validation:** Pain không nằm ở thao tác lưu vì việc đó đã dễ, mà nằm ở bước sau khi lưu: người dùng thiếu tín hiệu để biết nội dung nào đáng đọc trước nên nội dung có giá trị bị chìm. Pain rõ hơn ở người lưu nhiều nội dung không bắt buộc; người lưu ít hoặc có deadline bắt buộc có thể không cần sản phẩm.
+**Insight tạm thời sau validation:** Tín hiệu tổng hợp gợi ý pain không nằm ở thao tác lưu mà ở bước sau khi lưu: người dùng thiếu tín hiệu để biết nội dung nào đáng đọc trước nên nội dung có giá trị có thể bị chìm. Pain có vẻ rõ hơn ở người lưu nhiều nội dung không bắt buộc; kết luận này cần được đối chiếu bằng participant log và quote gốc.
 
 Bằng chứng đính kèm: [`02-group-problem-statement-interview-notes.md`](./02-group-problem-statement-interview-notes.md).
 
@@ -126,7 +128,7 @@ Bằng chứng đính kèm: [`02-group-problem-statement-interview-notes.md`](./
 → [3 Để đó đọc sau: nhiều ngày/tuần — người]
 → [4 Nội dung tích tụ liên tục]  <-- bottleneck bắt đầu
 → [5 Muốn tìm lại: 5–10' — người]
-→ [6 Tìm + đọc lướt + đánh giá: 10–20' — người]  <-- bottleneck chính
+→ [6 Đọc lướt + đánh giá + ưu tiên: 10–20' — người]  <-- bottleneck chính
 → [7 Quyết định đọc/bỏ qua: 1–2' — người]
 ```
 
@@ -162,11 +164,11 @@ hoặc tự chọn nội dung. Không tự xóa và không tự đánh dấu đ�
 
 | Metric | Trước | Sau kỳ vọng | Cách đo |
 |---|---:|---:|---|
-| Tổng thời gian tìm và chọn | 20–35 phút/lần | 5–10 phút/lần | Từ lúc mở kho đến khi chọn được nội dung cần đọc |
-| Saved-to-Read Rate | 20–30% theo baseline cá nhân | 55–60% sau 4 tuần | `số nội dung opened/read ÷ tổng số nội dung saved` |
-| Số bước thủ công | 7/7 | 3/9 | Đếm bước người dùng trực tiếp làm |
+| Thời gian tìm và chọn | 15–30 phút/lần theo ước tính workflow | Không quá 2 phút/lần trong pilot | Từ lúc mở kho/digest đến khi chọn được một nội dung cần đọc |
+| Saved-to-Reopen Rate | 20–30% theo ước tính cá nhân | Tăng ít nhất 10 điểm phần trăm sau pilot 2 tuần | `số link có opened_at ÷ tổng số link saved` trên cùng cohort |
+| Confirmed Read Rate | Chưa có baseline | Ghi nhận trong pilot, chưa đặt target tuyệt đối | `số link được user xác nhận read ÷ tổng số link saved` trên cùng cohort |
 | Bottleneck | Tự tìm + đọc lướt + đánh giá + ưu tiên | Review recommendation | So sánh thời gian/filter effort |
-| Forgotten Rate | Khoảng 70–80% chưa được mở lại | Dưới 25% | Link quá 14 ngày chưa opened/read/archive |
+| 14-day Unopened Rate | Khoảng 70–80% theo ước tính cá nhân | Giảm ít nhất 10 điểm phần trăm so với baseline | Link đủ 14 ngày nhưng chưa có `opened_at` hoặc `archive`; chỉ tổng kết khi cohort đủ tuổi |
 | Risk mới | Nội dung bị quên | AI summary/tag/score sai | Tỷ lệ user sửa, bỏ qua hoặc đánh dấu không hữu ích |
 
 ### 5.3. Problem Statement v0
@@ -176,14 +178,14 @@ hoặc tự chọn nội dung. Không tự xóa và không tự đánh dấu đ�
 | **Actor** | Sinh viên, researcher và knowledge worker thường xuyên lưu bài viết, video, paper hoặc tài liệu online khi chưa có thời gian đọc ngay. Validation cho thấy pain rõ hơn ở người lưu nhiều nội dung không bắt buộc. |
 | **Workflow** | Người dùng tìm nội dung → lưu bookmark/tab → để đọc sau → backlog tăng → tự tìm lại → đọc lướt/đánh giá → quyết định đọc. Nhiều nội dung tiếp tục bị bỏ quên. |
 | **Bottleneck** | Sau khi lưu, người dùng phải tự tìm, đánh giá và ưu tiên nhiều nội dung thiếu context. Họ khó xác định nội dung nào đáng đọc tại thời điểm hiện tại. |
-| **Impact** | Baseline cá nhân: lưu 15–20 link/tuần nhưng chỉ 20–30% được mở lại; mỗi lần tìm/chọn mất 5–10 phút. Interview xác nhận 6/8 người gặp hiện tượng lưu nhưng ít quay lại. |
-| **Success Metric** | Saved-to-Read Rate tăng từ 20–30% lên 55–60% sau bốn tuần; thời gian chọn nội dung giảm; Forgotten Rate dưới 25%. |
+| **Impact** | Baseline cá nhân tự ước tính: lưu 15–20 link/tuần nhưng chỉ 20–30% được mở lại; tìm lại mất 5–10 phút và đọc lướt/đánh giá mất thêm 10–15 phút. Tổng hợp nhóm ghi nhận 6/8 người gặp hiện tượng tương tự, nhưng repo chưa có bằng chứng gốc để đối chiếu. |
+| **Success Metric** | Saved-to-Reopen Rate tăng, thời gian chọn nội dung giảm và tỷ lệ link quá 14 ngày chưa mở giảm. Cần tách trạng thái `opened` khỏi xác nhận `read`. |
 | **Boundary** | Chỉ xử lý URL do user chủ động lưu và hỗ trợ tóm tắt, phân loại, ranking, resurfacing. User giữ quyền đọc/bỏ qua/sửa/xóa; hệ thống không tự truy cập dữ liệu riêng tư hoặc xác nhận nội dung là đúng. |
 
 **AI phản biện v0:**
 
 - Field mơ hồ: “người dùng” còn rộng; baseline tỷ lệ đọc lại mới được đo rõ ở problem owner; “đã đọc” cần định nghĩa cụ thể.
-- Nhóm sửa: v1 thu hẹp actor pilot, giới hạn content type/độ dài/ngôn ngữ, định nghĩa metric theo event `saved`, `opened`, `read`, `archive` và thêm boundary kỹ thuật.
+- Nhóm sửa: v1 thu hẹp actor pilot, giới hạn content type/độ dài/ngôn ngữ, tách metric theo event `saved`, `opened`, `read`, `archive` và thêm boundary kỹ thuật.
 
 ---
 
@@ -208,7 +210,7 @@ hoặc tự chọn nội dung. Không tự xóa và không tự đánh dấu đ�
 
 **5 câu hỏi chốt:**
 
-1. Rule không giải được 70–80% vì chỉ dùng thuộc tính tĩnh, không hiểu nội dung hoặc active goal; tuy vậy rule vẫn là non-AI baseline bắt buộc.
+1. Rule không hiểu nội dung hoặc active goal nên có thể không giải quyết được bước đánh giá relevance; tuy vậy rule vẫn là non-AI baseline bắt buộc. Mức 70–80% chưa mở lại hiện chỉ là ước tính cá nhân, không phải hiệu quả đã được đo.
 2. Các bước đi theo một đường: lưu URL → bóc text → AI xử lý → dashboard → user review; chỉ rẽ nhánh khi link chết, paywall hoặc extraction lỗi.
 3. Không cần Agent tự lập kế hoạch/gọi nhiều tool; user chỉ cần summary và priority để tự quyết định.
 4. User phát hiện lỗi khi review summary/Why now?; có thể mở link gốc hoặc sửa score/tag trong dưới một phút.
@@ -227,8 +229,8 @@ hoặc tự chọn nội dung. Không tự xóa và không tự đánh dấu đ�
 | **Actor** | Sinh viên, researcher và knowledge worker lưu tối thiểu khoảng 10 nội dung online không bắt buộc mỗi tuần để học/làm việc nhưng chưa có thời gian đọc ngay. Pilot tập trung người dùng URL tiếng Việt/Anh dạng text. |
 | **Workflow** | User lưu URL + goal → Rule validate/deduplicate → hệ thống extract text → AI tóm tắt ba ý, gắn topic và Priority Score/Why now? → Digest Dashboard → user review 1–2 phút → đọc/bỏ qua/sửa → feedback. |
 | **Bottleneck** | Sau khi save và trước khi đọc, user phải tự tìm, đọc lướt và ưu tiên một backlog thiếu context. AI can thiệp đúng giữa hai bước này. |
-| **Impact** | Baseline cá nhân: 15–20 link/tuần, chỉ 20–30% được mở lại và mất 5–10 phút/lần tìm/chọn. Validation: 6/8 người phỏng vấn xác nhận hiện tượng lưu nhưng ít quay lại. |
-| **Success Metric** | Saved-to-Read Rate đạt 55–60% sau bốn tuần; thời gian tìm/chọn dưới hai phút trong dashboard; Forgotten Rate dưới 25%. Theo dõi thêm tỷ lệ mở link gốc, sửa tag/score và bỏ recommendation. |
+| **Impact** | Baseline cá nhân tự ước tính: 15–20 link/tuần, 20–30% được mở lại; tìm lại mất 5–10 phút và đọc lướt/đánh giá mất thêm 10–15 phút. Tổng hợp nhóm ghi nhận 6/8 người có hiện tượng lưu nhưng ít quay lại; bằng chứng nguồn và quote nguyên văn chưa có trong repo. |
+| **Success Metric** | Trong pilot hai tuần: Saved-to-Reopen Rate tăng ít nhất 10 điểm phần trăm so với baseline cùng người dùng và thời gian tìm/chọn không quá hai phút trong dashboard. Theo dõi riêng Confirmed Read Rate, 14-day Unopened Rate, tỷ lệ sửa tag/score và tỷ lệ bỏ recommendation; chưa đặt target tuyệt đối cho các metric chưa có baseline. |
 | **Boundary** | **Làm:** URL công khai dạng text dưới 3.000 từ, tiếng Việt/Anh; tóm tắt ba bullet, tag topic, priority/Why now?, dashboard và feedback.<br>**Không làm:** video/podcast, PDF nội bộ/bảo mật, trang login/paywall; không spam notification, tự xóa, tự đánh dấu đã đọc hoặc khẳng định nguồn đúng. |
 | **AI intervention point** | Sau khi URL được lưu, validate và extract thành công; trước khi nội dung được xếp vào Digest Dashboard để user lựa chọn. |
 | **Mức chọn** | **Workflow** — luồng URL → text → summary/priority → dashboard cố định, không cần tự lập kế hoạch hoặc hành động độc lập. |
@@ -239,30 +241,30 @@ hoặc tự chọn nội dung. Không tự xóa và không tự đánh dấu đ�
 | Câu hỏi | Yes / Not Yet / No | Ghi chú |
 |---|---|---|
 | Actor + workflow rõ chưa? | Yes | Actor pilot và workflow URL → Digest → human review đã được giới hạn. |
-| Baseline + metric đo được chưa? | Yes cho pilot | Có baseline cá nhân 20–30%, công thức/event đo và target; cần tiếp tục kiểm chứng trên năm người. |
-| Data/input đủ dùng chưa? | Yes | MVP chỉ cần URL công khai dạng text do user chủ động cung cấp. |
+| Baseline + metric đo được chưa? | Not Yet | Mức 20–30% mới là ước tính cá nhân; pilot cần tạo baseline theo event và tách `opened` khỏi `read`. |
+| Data/input đủ dùng chưa? | Yes cho pilot | Pilot chỉ cần URL công khai dạng text do người tham gia chủ động cung cấp; chưa kết luận đủ cho MVP. |
 | AI sai, hậu quả chấp nhận được không? | Yes | User xem link gốc, sửa/bỏ gợi ý; AI không tự xóa hoặc hành động bên ngoài. |
 | Có người review/owner không? | Yes | User là owner của library; Trần Thị Thu Hiền và Bùi Phương Duy phụ trách workflow/pilot tracking. |
 | Có cách non-AI đơn giản hơn không? | Yes nhưng chưa đủ giả thuyết | Inbox + tag + sort ngày + reminder là baseline để so sánh; chưa hiểu semantic relevance/goal match. |
 
-**Decision:** `Go — concierge/manual pilot`, chưa Go cho production integration hoặc Agent.
+**Decision:** `Go — manual validation pilot`; `Not Yet — build MVP/production integration/Agent`.
 
-**Lý do:** Candidate có actor/workflow/bottleneck rõ, 6/8 người phỏng vấn xác nhận hiện tượng và input URL công khai đủ cho pilot. Workflow có thể chạy thủ công trong lab, rủi ro AI sai thấp nhờ người dùng review và link gốc luôn tồn tại. Tuy nhiên baseline nhóm, quote nguyên văn và chênh lệch so với non-AI rule cần được ghi đầy đủ trước khi quyết định build MVP kỹ thuật.
+**Lý do:** Candidate có actor/workflow/bottleneck đủ rõ để thử nhỏ; tổng hợp nhóm ghi nhận tín hiệu 6/8 và input URL công khai đủ cho pilot. Workflow có thể chạy thủ công, rủi ro được giới hạn nhờ người dùng review và link gốc luôn tồn tại. Tuy nhiên participant log, quote nguyên văn, baseline theo event và chênh lệch so với non-AI rule còn thiếu, nên chưa đủ căn cứ để build MVP kỹ thuật.
 
-**Pilot nhỏ nhất:** Thử nghiệm hai tuần với năm người, mỗi người cung cấp 10–15 URL. Nhóm dùng một prompt template để tạo summary ba ý, topic, Priority Score và Why now?, sau đó gửi Digest để user review. Ba metric chính: (1) Saved-to-Read Rate, (2) thời gian chọn bài, (3) tỷ lệ recommendation dẫn đến mở link gốc; guardrail gồm tỷ lệ sửa summary/tag/score và số lỗi parse.
+**Pilot nhỏ nhất:** Thử nghiệm hai tuần với năm người, mỗi người cung cấp tổng cộng 10–15 URL: tuần 1 dùng inbox + tag + sort ngày làm baseline; tuần 2 dùng các URL cùng loại với prompt template tạo summary ba ý, topic, Priority Score và Why now?, sau đó gửi Digest để user review. Metric chính: (1) Saved-to-Reopen Rate, (2) thời gian chọn bài, (3) Confirmed Read Rate. Guardrail: tỷ lệ bỏ recommendation, tỷ lệ sửa summary/tag/score và số lỗi parse. Chỉ so sánh các cohort có cùng thời gian theo dõi; kết quả mẫu nhỏ chỉ dùng để quyết định có thử tiếp, không khái quát cho toàn bộ người dùng.
 
 **Nếu Not Yet:** Tạm dừng build nếu chưa thu được hai quote nguyên văn, event baseline hoặc sample URL đủ đa dạng; bổ sung validation trước khi tiếp tục.
 
 **Nếu No-Go:** Dùng inbox link duy nhất, folder/tag, sort theo ngày/độ dài và reminder hai lần/tuần.
 
-**Exit / rollback:** Dừng AI nếu Saved-to-Read Rate không tăng ít nhất 10 điểm phần trăm so với baseline non-AI; hơn 70% recommendation bị bỏ qua; summary sai khiến user hiểu sai nội dung; hoặc chi phí xử lý vượt giá trị thời gian tiết kiệm. Khi rollback, giữ URL/title/tag, tắt summary/score và quay về sort/filter/reminder thủ công.
+**Exit / rollback:** Dừng AI nếu Saved-to-Reopen Rate không tăng ít nhất 10 điểm phần trăm so với baseline non-AI; hơn 70% recommendation bị bỏ qua; summary sai khiến user hiểu sai nội dung; hoặc chi phí xử lý vượt giá trị thời gian tiết kiệm. Khi rollback, giữ URL/title/tag, tắt summary/score và quay về sort/filter/reminder thủ công.
 
 ---
 
 ### Self-check nộp phần 02
 
 - [x] Có nhật ký hội tụ 18 → 1, cluster, shortlist và score.
-- [ ] Có validation 8 người nhưng vẫn cần dán ít nhất hai quote nguyên văn và file interview notes.
+- [ ] Có số tổng hợp validation 8 người nhưng participant log và hai quote nguyên văn vẫn chưa được bổ sung.
 - [x] Có research ba giải pháp với link chính thức đã kiểm tra.
 - [x] Có workflow trước/sau đủ thời gian, handoff, bottleneck, boundary và fallback.
 - [x] Có PS v0 → v1, baseline/target/cách đo và boundary làm/không làm.

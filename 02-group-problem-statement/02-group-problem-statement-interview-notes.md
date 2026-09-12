@@ -12,20 +12,24 @@
 
 ## Participant log
 
+Chưa có dữ liệu theo từng người trong repo. Con số 6/8 dưới đây là kết quả tổng hợp do nhóm ghi nhận, chưa thể đối chiếu độc lập cho đến khi bổ sung note, chat hoặc ghi âm gốc.
+
+| Mã người tham gia | Nhóm đối tượng | Có pain? | Lý do / ghi chú nguyên văn | Dấu vết nguồn |
+|---|---|---|---|---|
+| #1 | Chưa bổ sung | Có — theo tổng hợp nhóm | Chưa bổ sung | Chưa bổ sung |
+| #2 | Chưa bổ sung | Có — theo tổng hợp nhóm | Chưa bổ sung | Chưa bổ sung |
+| #3 | Chưa bổ sung | Có — theo tổng hợp nhóm | Chưa bổ sung | Chưa bổ sung |
+| #4 | Chưa bổ sung | Không — theo tổng hợp nhóm | Lưu ít hoặc chỉ lưu nội dung có deadline; cần đối chiếu lý do chính xác | Chưa bổ sung |
+| #5 | Chưa bổ sung | Có — theo tổng hợp nhóm | Chưa bổ sung | Chưa bổ sung |
+| #6 | Chưa bổ sung | Có — theo tổng hợp nhóm | Chưa bổ sung | Chưa bổ sung |
+| #7 | Chưa bổ sung | Không — theo tổng hợp nhóm | Lưu ít hoặc chỉ lưu nội dung có deadline; cần đối chiếu lý do chính xác | Chưa bổ sung |
+| #8 | Chưa bổ sung | Có — theo tổng hợp nhóm | Chưa bổ sung | Chưa bổ sung |
 
 ## Hai quote đưa vào group report
 
-**Quote #1:**
+**Quote #1:** Chưa bổ sung từ nguồn gốc; không tạo hoặc viết lại bằng AI.
 
-```text
-[DÁN NGUYÊN VĂN — không viết lại cho đẹp]
-```
-
-**Quote #2:**
-
-```text
-[DÁN NGUYÊN VĂN — không viết lại cho đẹp]
-```
+**Quote #2:** Chưa bổ sung từ nguồn gốc; không tạo hoặc viết lại bằng AI.
 
 ## Insight và thay đổi
 

@@ -20,7 +20,7 @@
 
 | # | Lăng kính | Problem quan sát được | Ai chịu ảnh hưởng? | Dấu hiệu thật (số + bằng chứng) |
 |---|---|---|---|---|
-| 1 | Lặp lại | Tôi thường lưu nhiều bài viết, video hoặc tài liệu để đọc sau nhưng thường quên quay lại. | Bản thân | Khoảng 15–20 link/tuần, chỉ khoảng 20–30% được mở lại để đọc. |
+| 1 | Lặp lại | Tôi thường lưu nhiều bài viết, video hoặc tài liệu để đọc sau nhưng thường quên quay lại. | Bản thân | Ước tính lưu 15–20 link/tuần, chỉ khoảng 20–30% được mở lại; chưa có dữ liệu xác nhận tỷ lệ đọc xong. |
 | 2 | Tốn thời gian | Khi nghiên cứu một chủ đề, tôi phải mở và đọc nhiều nguồn mới xác định được tài liệu nào hữu ích. | Bản thân | Khoảng 6–10 nguồn/lần, mất 30–45 phút. |
 | 3 | Tốn thời gian | Khi bookmark ngày càng nhiều, tôi mất thời gian tìm lại tài liệu mình từng lưu. | Bản thân | Khoảng 5–10 phút/lần, xảy ra 3–4 lần/tuần. |
 | 4 | AI có thể tốt hơn | Tôi phải tự đánh giá và quyết định nội dung nào trong danh sách đã lưu đáng đọc trước. | Bản thân | Mất khoảng 10–15 phút/lần để xem và chọn nội dung. |
@@ -37,7 +37,7 @@
 
 | Candidate | Baseline hiện có | Loại bằng chứng | Cách kiểm chứng nhanh |
 |---|---|---|---|
-| Save & Forget | 15–20 link/tuần; 20–30% được mở lại | Self-reported estimate từ thói quen sử dụng gần đây | Chụp số bookmark/tab đầu tuần; cuối tuần đánh dấu link đã mở và tính `Saved-to-Read Rate`. |
+| Save & Forget | 15–20 link/tuần; 20–30% được mở lại | Self-reported estimate từ thói quen sử dụng gần đây | Ghi `saved_at`, `opened_at` và trạng thái tự xác nhận `read`; tính riêng tỷ lệ mở lại và tỷ lệ đọc xong. |
 | Research Information Overload | 6–10 nguồn/lần; 30–45 phút/lần | Self-reported estimate | Bấm giờ ba phiên research; ghi số nguồn đã mở và nguồn cuối cùng được chọn. |
 | Online Shopping Decision Overload | 5–8 nguồn/lần; 30–60 phút/lần | Self-reported estimate | Dùng browser history của ba lần mua gần nhất để đối chiếu số nguồn và thời gian. |
 
@@ -102,13 +102,13 @@ Save & Forget đứng đầu vì có tần suất cao nhất, dữ liệu cá nh
 
 **Bottleneck:** Sau khi lưu, người dùng phải tự tìm lại, đánh giá và ưu tiên giữa nhiều nội dung. Khi số lượng link tăng lên, bước này ngày càng mất thời gian và khó quyết định.
 
-**Impact:** Tôi lưu khoảng 15–20 link/tuần nhưng chỉ khoảng 20–30% được mở lại để đọc, nghĩa là khoảng 10–16 link/tuần tiếp tục tồn đọng. Mỗi lần tìm lại và lựa chọn nội dung mất khoảng 5–10 phút.
+**Impact:** Tôi ước tính lưu khoảng 15–20 link/tuần nhưng chỉ 20–30% được mở lại, nghĩa là khoảng 10–16 link/tuần chưa được mở lại. Mỗi lần tìm lại mất khoảng 5–10 phút và đánh giá/ưu tiên mất thêm khoảng 10–15 phút, tổng cộng khoảng 15–25 phút. Việc mở link chưa được xem là bằng chứng đã đọc xong.
 
-**Success metric:** Metric chính là `Saved-to-Read Rate = số nội dung đã lưu được thực sự đọc / tổng số nội dung đã lưu × 100%`. Baseline ước tính 20–30%; target đạt ít nhất 55% sau bốn tuần. Metric phụ: giảm 50% số link tồn quá hai tuần và giảm thời gian chọn nội dung xuống dưới ba phút/lần. Cách đo: mỗi link có `saved_at`, `opened_at` và trạng thái `read/archive/delete`; tổng hợp theo từng tuần.
+**Success metric:** Metric có baseline là `Saved-to-Reopen Rate = số link có opened_at / tổng số link đã lưu × 100%`, hiện mới ước tính 20–30%; target cá nhân đạt ít nhất 55% sau bốn tuần. Theo dõi riêng `Confirmed Read Rate = số link được người dùng xác nhận read / tổng số link đã lưu × 100%`; metric này chưa có baseline. Metric phụ: giảm 50% số link tồn quá hai tuần và giảm thời gian chọn nội dung xuống dưới ba phút/lần. Mỗi link cần có `saved_at`, `opened_at` và trạng thái `read/archive/delete`, tổng hợp theo từng tuần.
 
 **Non-AI alternative:** Dùng folder, bookmark, manual tag, favorite và reminder cố định để tự tổ chức nội dung.
 
-**AI hypothesis:** Nếu AI có thể hiểu nội dung, học sở thích và hành vi của người dùng để xếp hạng và đưa nội dung phù hợp trở lại đúng thời điểm, Saved-to-Read Rate sẽ tăng so với bookmark truyền thống.
+**AI hypothesis:** Nếu AI có thể hiểu nội dung và dùng mục tiêu do người dùng cung cấp để xếp hạng, đưa nội dung phù hợp trở lại đúng thời điểm, tỷ lệ mở lại và tỷ lệ xác nhận đã đọc sẽ tăng so với bookmark truyền thống. Đây là giả thuyết cần so sánh với inbox + tag + reminder, chưa phải kết quả.
 
 **Boundary & risk:** AI chỉ tóm tắt, gắn nhãn, xếp hạng và đưa link trở lại; không tự xóa link, không đánh dấu “đã đọc” và không quyết định nội dung nào là đúng. Rủi ro chính là tóm tắt sai hoặc ưu tiên sai; người dùng luôn xem được URL, tiêu đề gốc và có thể sửa nhãn/priority.
 
@@ -125,12 +125,12 @@ Save & Forget đứng đầu vì có tần suất cao nhất, dữ liệu cá nh
 **Draft workflow Card #1:**
 
 ```text
-CURRENT STATE — khoảng 10–20 phút
+CURRENT STATE — khoảng 17–31 phút, chưa tính thời gian chờ và đọc nội dung
 
 [1 Tìm nội dung: 2–5']
 → [2 Lưu link: <1']
 → [3 Tìm lại: 5–10']
-→ [4 Tự đánh giá + ưu tiên: 5–10']  <-- bottleneck
+→ [4 Tự đánh giá + ưu tiên: 10–15']  <-- bottleneck
 → [5 Đọc / bỏ quên]
 
 FUTURE STATE — khoảng 3–7 phút thao tác lựa chọn
@@ -144,8 +144,6 @@ Fallback: nếu AI xếp hạng hoặc phân loại sai, hiển thị Recently S
 cho phép người dùng tự sửa tag/category, đặt priority thủ công
 hoặc bỏ qua recommendation.
 ```
-
-File đính kèm: `01-individual-problem-scan-workflow-card-1.png`
 
 ---
 
@@ -211,8 +209,6 @@ người dùng vẫn có thể xem toàn bộ kết quả, tự sort/filter
 và đánh giá nguồn theo cách truyền thống.
 ```
 
-File đính kèm: `01-individual-problem-scan-workflow-card-2.png`
-
 ---
 
 #### Problem Card #3 — Online Shopping Decision Overload
@@ -277,15 +273,13 @@ Fallback: nếu AI thiếu dữ liệu, review mâu thuẫn hoặc độ tin c�
 hiển thị nguồn gốc, cảnh báo độ chắc chắn và để người dùng tự so sánh.
 ```
 
-File đính kèm: `01-individual-problem-scan-workflow-card-3.png`
-
 ---
 
 ### 2.3. Card muốn pitch nhất
 
 **Card tôi muốn pitch nhất:** Problem Card #1 — Save & Forget.
 
-**Vì sao:** Đây là vấn đề tôi gặp thường xuyên trong quá trình học tập và research: tìm thấy nội dung hữu ích → lưu lại → link tích tụ → phải tự tìm và ưu tiên → nhiều nội dung cuối cùng không được đọc. Tôi lưu khoảng 15–20 link mỗi tuần nhưng chỉ khoảng 20–30% được mở lại, đồng thời mất khoảng 5–10 phút mỗi lần tìm và lựa chọn nội dung. Vì vậy vấn đề có workflow, bottleneck và impact rõ, đồng thời có thể đo bằng Saved-to-Read Rate.
+**Vì sao:** Đây là vấn đề tôi gặp thường xuyên trong quá trình học tập và research: tìm thấy nội dung hữu ích → lưu lại → link tích tụ → phải tự tìm và ưu tiên → nhiều nội dung cuối cùng không được mở lại. Tôi ước tính lưu khoảng 15–20 link mỗi tuần nhưng chỉ 20–30% được mở lại; bước tìm lại mất khoảng 5–10 phút và bước đánh giá/ưu tiên mất thêm 10–15 phút. Vì vậy vấn đề có workflow, bottleneck và impact sơ bộ rõ; cần đo riêng tỷ lệ mở lại và tỷ lệ xác nhận đã đọc.
 
 **Câu hỏi tôi muốn nhóm challenge:**
 
@@ -295,18 +289,18 @@ File đính kèm: `01-individual-problem-scan-workflow-card-3.png`
 **AI phản biện Card:**
 
 - Điểm yếu AI chỉ ra: Baseline 20–30% hiện mới dựa trên ước lượng cá nhân và chưa đủ để chứng minh pain có mức độ nghiêm trọng tương tự với các nhóm người dùng khác. Vấn đề cũng có thể đến từ việc người dùng không có thời gian đọc chứ không chỉ do thiếu prioritization.
-- Tôi sửa gì: Xác định Saved-to-Read Rate là metric chính và cần pilot để kiểm chứng baseline. Đồng thời giới hạn problem vào bước sau khi save — tìm lại, đánh giá và ưu tiên nội dung — thay vì giả định AI có thể giải quyết toàn bộ nguyên nhân khiến người dùng không đọc.
+- Tôi sửa gì: Dùng Saved-to-Reopen Rate cho baseline hiện có và theo dõi thêm Confirmed Read Rate trong pilot. Đồng thời giới hạn problem vào bước sau khi save — tìm lại, đánh giá và ưu tiên nội dung — thay vì giả định AI có thể giải quyết toàn bộ nguyên nhân khiến người dùng không đọc.
 
 ### Kế hoạch kiểm chứng nhỏ cho Card #1
 
 | Thành phần | Kế hoạch |
 |---|---|
 | Phạm vi | Một người dùng là bản thân, tối thiểu 30 link mới trong bốn tuần; không kết luận đại diện cho mọi sinh viên. |
-| Tuần baseline | Lưu link như hiện tại; ghi `saved_at`, `opened_at`, trạng thái và thời gian tìm/chọn. |
-| Tuần thử nghiệm | Dùng một inbox link duy nhất, tóm tắt/tag tự động, top 3 recommendation và review cuối tuần. |
-| Metric chính | Saved-to-Read Rate theo tuần. |
+| Hai tuần baseline | Lưu link như hiện tại; ghi `saved_at`, `opened_at`, trạng thái và thời gian tìm/chọn. |
+| Hai tuần thử nghiệm | Dùng một inbox link duy nhất, tóm tắt/tag tự động, top 3 recommendation và review cuối tuần. |
+| Metric chính | Saved-to-Reopen Rate theo tuần; ghi riêng Confirmed Read Rate để tránh coi mở link là đã đọc. |
 | Metric phụ | Số link tồn quá hai tuần; thời gian chọn link; tỷ lệ recommendation bị bỏ qua; số lần sửa tag/ranking. |
-| Thành công | Saved-to-Read Rate đạt ít nhất 55%, không cần quá ba phút để chọn link và không có link bị tự động xóa. |
+| Thành công | Sau bốn tuần, Saved-to-Reopen Rate đạt ít nhất 55%, thời gian chọn link không quá ba phút và không có link bị tự động xóa. Target này là giả thuyết cá nhân cần kiểm chứng. |
 | Dừng/đổi hướng | Dừng AI ranking nếu tỷ lệ recommendation bị bỏ qua trên 70% trong hai tuần hoặc AI tóm tắt sai làm người dùng hiểu sai nội dung; quay về inbox + tag + reminder thủ công. |
 
 ### Nhật ký pitch và challenge

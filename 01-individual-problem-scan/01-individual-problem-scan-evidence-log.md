@@ -17,8 +17,10 @@
 **Tổng kết tuần:**
 
 - Tổng link đã lưu:
-- Tổng link được mở lại để đọc:
-- `Saved-to-Read Rate = link được mở lại / tổng link đã lưu × 100%`:
+- Tổng link được mở lại:
+- Tổng link được xác nhận đã đọc xong:
+- `Saved-to-Reopen Rate = link có opened_at / tổng link đã lưu × 100%`:
+- `Confirmed Read Rate = link được xác nhận read / tổng link đã lưu × 100%`:
 - Số link tồn quá hai tuần:
 - Thời gian tìm/chọn trung bình:
 - Screenshot hoặc nguồn kiểm tra:
