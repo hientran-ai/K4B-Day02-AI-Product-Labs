@@ -12,16 +12,6 @@
 
 ## Participant log
 
-| ID | Kết quả | Dấu hiệu chính | Quote nguyên văn | Ghi chú |
-|---|---|---|---|---|
-| #1 | Xác nhận | Lưu nhiều nhưng ít quay lại | `[DÁN QUOTE THẬT #1]` | Chọn quote thể hiện rõ hành vi và hậu quả |
-| #2 | Xác nhận | Lưu nhiều nhưng khó ưu tiên | `[DÁN QUOTE THẬT #2]` | Chọn quote khác góc nhìn #1 |
-| #3 | Xác nhận | Lưu rồi quên/khó tìm lại | Chưa có trong nội dung được cung cấp | Có thể bổ sung nếu còn notes |
-| #4 | Phản bác | Lưu ít hoặc chỉ lưu nội dung có deadline | Chưa có trong nội dung được cung cấp | Negative case bắt buộc giữ lại |
-| #5 | Xác nhận | Nội dung giá trị chìm trong backlog | Chưa có trong nội dung được cung cấp | |
-| #6 | Xác nhận | Phải tự đánh giá lại nội dung đã lưu | Chưa có trong nội dung được cung cấp | |
-| #7 | Phản bác | Nội dung bắt buộc nên vẫn được đọc | Chưa có trong nội dung được cung cấp | Negative case bắt buộc giữ lại |
-| #8 | Xác nhận | Khó xác định nội dung đáng đọc trước | Chưa có trong nội dung được cung cấp | |
 
 ## Hai quote đưa vào group report
 
